@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: Print message
-        run: echo "Hello,Github Actions! My name is ${{ github.repository_owner }}"
+        run: echo "Hello, GitHub Actions! My name is ${{ github.repository_owner }}"
