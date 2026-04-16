@@ -5,7 +5,13 @@ on: push
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Print message
+      - name: Print Hello Message
         run: echo "Hello, GitHub Actions! My name is ${{ github.repository_owner }}"
+
+  say-bye:
+    runs-on: ubuntu-latest
+    needs: say-hello
+    steps:
+      - name: Print Bye Message
+        run: echo "Goodbye from second job!"
