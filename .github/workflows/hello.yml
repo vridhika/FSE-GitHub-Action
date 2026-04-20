@@ -1,19 +1,47 @@
+# name: My First Workflow
+
+# on: push
+
+# jobs:
+#   say-hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Print Hello Message
+#         run: echo "Hello, GitHub Actions! My name is ${{ github.repository_owner }}"
+
+#   say-bye:
+#     runs-on: ubuntu-latest
+#     needs: say-hello
+#     if: false
+#     steps:
+#       - name: Print Bye Message
+#         run: echo "Goodbye from second job!"
+
 name: My First Workflow
 
 on: push
 
 jobs:
   say-hello:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+
     steps:
-      - name: Print Hello Message
-        run: echo "Hello, GitHub Actions! My name is ${{ github.repository_owner }}"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print Hello
+        run: echo "Hello, Github Actions!"
+
+      - name: Print Name
+        run: echo "Trigun"
 
   say-bye:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     needs: say-hello
-    if: false
-    steps:
-      - name: Print Bye Message
-        run: echo "Goodbye from second job!"
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print Goodbye
+        run: echo "Goodbye"
