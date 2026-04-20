@@ -29,11 +29,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print Hello
-        run: echo "Hello, Github Actions!"
+      - name: list file
+        run: ls
 
       - name: Print Name
-        run: echo "Trigun"
+        run: echo "Vridhika"
 
   say-bye:
     runs-on: ubuntu-latest  
