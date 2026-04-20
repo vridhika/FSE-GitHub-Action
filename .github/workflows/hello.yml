@@ -1,6 +1,6 @@
 name: My First Workflow
 
-on: pull_request
+on: push
 
 jobs:
   say-hello:
@@ -12,6 +12,7 @@ jobs:
   say-bye:
     runs-on: ubuntu-latest
     needs: say-hello
+    if: false
     steps:
       - name: Print Bye Message
         run: echo "Goodbye from second job!"
