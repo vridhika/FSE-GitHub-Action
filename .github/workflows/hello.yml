@@ -6,6 +6,10 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest 
 
+    defaults:
+      run:
+        working-directory: ./
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -13,12 +17,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'   
+          node-version: '18'
 
       - name: Display Node version
         run: node -v
 
-      - name: Starting test
+      - name: Run test
         run: npm run test
 
       - name: List files
