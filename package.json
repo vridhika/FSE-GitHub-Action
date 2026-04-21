@@ -4,8 +4,8 @@
   "description": "public class Main {\r     public static void main(String[] args) {\r         System.out.println(\"Hello World\");\r     }\r }",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "test": "echo \"No tests yet\""
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vridhika/FSE-GitHub-Action.git"
