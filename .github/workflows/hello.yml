@@ -13,10 +13,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'   # you can change to 16, 20, etc.
+          node-version: '18'   
 
       - name: Display Node version
         run: node -v
+
+      - name: Starting test
+        run: npm run test
 
       - name: List files
         run: ls
