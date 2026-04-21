@@ -1,22 +1,3 @@
-# name: My First Workflow
-
-# on: push
-
-# jobs:
-#   say-hello:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Print Hello Message
-#         run: echo "Hello, GitHub Actions! My name is ${{ github.repository_owner }}"
-
-#   say-bye:
-#     runs-on: ubuntu-latest
-#     needs: say-hello
-#     if: false
-#     steps:
-#       - name: Print Bye Message
-#         run: echo "Goodbye from second job!"
-
 name: My First Workflow
 
 on: push
@@ -26,10 +7,18 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: list file
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'   # you can change to 16, 20, etc.
+
+      - name: Display Node version
+        run: node -v
+
+      - name: List files
         run: ls
 
       - name: Print Name
@@ -40,8 +29,8 @@ jobs:
     needs: say-hello
 
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Print Goodbye
         run: echo "Goodbye"
